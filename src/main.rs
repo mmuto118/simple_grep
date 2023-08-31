@@ -17,7 +17,10 @@ fn main() {
 
     println!("In file {}", config.filename);
 
-    run(config); 
+    if let Err(e) = run(config) {
+        println!("Apllicaditon error: {}", e);
+        process::exit(1);
+    } 
 
 }
 // myresult を定義
